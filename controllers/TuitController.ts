@@ -3,6 +3,7 @@ import { ParamsDictionary } from "express-serve-static-core";
 import { ParsedQs } from "qs";
 import TuitDao from '../daos/TuitDao';
 import TuitControllerI from "../interfaces/TuitController";
+import Tuit from "../models/Tuit";
 
 export default class TuitController implements TuitControllerI {
     app: Express;
@@ -20,7 +21,7 @@ export default class TuitController implements TuitControllerI {
     }
 
     findAllTuits = (req: Request, res: Response) => this.tuitDao.findAllTuits()
-    .then(tuits => res.json(tuits));
+    .then((tuits: Tuit[]) => res.json(tuits));
 
     findTuitById = (req: Request, res: Response) => this.tuitDao.findTuitById(req.params.tid)
     .then (tuit => res.json(tuit));

@@ -3,8 +3,15 @@ import UserController from "./controllers/UserController";
 import TuitController from "./controllers/TuitController";
 import UserDao from './daos/UserDao';
 import TuitDao from './daos/TuitDao';
+import mongoose from 'mongoose';
+
+// connect to the database
+//const DB_USERNAME = process.env.DB_USERNAME;
+//const DB_PASSWORD = process.env.DB_PASSWORD;
+mongoose.connect("mongodb://localhost:27017/tuiter");
 
 const app = express();
+app.use(express.json());
 
 app.get('/hello', (req: Request, res: Response) =>
     res.send('Hello World!'));
