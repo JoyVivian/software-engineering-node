@@ -5,10 +5,9 @@ import UserDao from './daos/UserDao';
 import TuitDao from './daos/TuitDao';
 import mongoose from 'mongoose';
 
-// connect to the database
-//const DB_USERNAME = process.env.DB_USERNAME;
-//const DB_PASSWORD = process.env.DB_PASSWORD;
-mongoose.connect("mongodb://localhost:27017/tuiter");
+
+//mongoose.connect("mongodb://localhost:27017/tuiter");
+mongoose.connect('mongodb+srv://JoyVivian:997630Zw*@cluster0.pha8g.mongodb.net/myFirstDatabase?retryWrites=true&w=majority')
 
 const app = express();
 app.use(express.json());
