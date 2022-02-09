@@ -1,4 +1,5 @@
-import express, {Request, Response} from 'express';
+import {Request, Response} from 'express';
+import express from 'express';
 import UserController from "./controllers/UserController";
 import TuitController from "./controllers/TuitController";
 import UserDao from './daos/UserDao';
