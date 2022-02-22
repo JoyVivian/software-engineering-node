@@ -12,16 +12,18 @@ mongoose.connect('mongodb+srv://JoyVivian:997630Zw*@cluster0.pha8g.mongodb.net/m
 const app = express();
 app.use(express.json());
 
+app.get('/', (req: Request, res: Response) => 
+    res.send('Welcome!')
+);
+
 app.get('/hello', (req: Request, res: Response) =>
     res.send('Hello World!'));
 
 app.get('/add/:a/:b', (req: Request, res: Response) =>
     res.send(req.params.a + req.params.b));
 
-const userDao = new UserDao();
+const userController = UserController.getInstance(app);
 const tuitDao = new TuitDao();
-
-const userController = new UserController(app, userDao);
 const tuitController = new TuitController(app, tuitDao);
 
 const PORT = 4000;

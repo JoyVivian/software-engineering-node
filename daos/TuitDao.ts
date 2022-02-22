@@ -1,7 +1,7 @@
 import Tuit from "../models/Tuit";
 import TuitModel from "../mongoose/TuitModel";
 import TuitDaoI from "../interfaces/TuitDao";
-import UserModel from "../mongoose/UserModel";
+import UserModel from "../mongoose/users/UserModel";
 
 export default class TuitDao implements TuitDaoI {
     async findAllTuits(): Promise<Tuit[]> {
