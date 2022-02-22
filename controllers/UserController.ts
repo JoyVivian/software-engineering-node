@@ -79,7 +79,7 @@ export default class UserController implements UserControllerI {
     */
    deleteUser = (req: Request, res: Response) =>
    UserController.userDao.deleteUser(req.params.userid)
-           .then(status => res.json(status));
+           .then(status => res.send(status));
     
     /**
      * Updates user with new values in database.
@@ -89,6 +89,8 @@ export default class UserController implements UserControllerI {
      */
     updateUser = (req: Request, res: Response) =>
    UserController.userDao.updateUser(req.params.userid, req.body)
-           .then(status => res.json(status));
+           .then(status => res.send(status));
+
+    
 }
 

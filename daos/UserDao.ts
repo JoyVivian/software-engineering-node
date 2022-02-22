@@ -63,5 +63,13 @@ export default class UserDao implements UserDaoI {
     async updateUser(uid: string, user: User): Promise<any> {
         return await UserModel.updateOne({ _id: uid }, { $set: user });
     }
+
+    /**
+     * Removes all users from the database.
+     * @returns Promise to be notified when all suers are removed from database.
+     */
+    async deleteAllUsers(): Promise<any> {
+        UserModel.deleteMany({});
+    }
 }
 
