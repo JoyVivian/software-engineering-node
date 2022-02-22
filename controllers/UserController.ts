@@ -34,6 +34,7 @@ export default class UserController implements UserControllerI {
             app.post("/api/users", UserController.userController.createUser);
             app.delete("/api/users/:userid", UserController.userController.deleteUser);
             app.put("/api/:userid", UserController.userController.updateUser);
+            app.delete("/api/users", UserController.userController.deleteAllUsers);
         }
         return UserController.userController;
    } 
@@ -91,6 +92,14 @@ export default class UserController implements UserControllerI {
    UserController.userDao.updateUser(req.params.userid, req.body)
            .then(status => res.send(status));
 
-    
+    /**
+     * Removed all users from the database.
+     * @param req Request instance.
+     * @param res Response instance.
+     * @returns Promise to be notified when users are removed from database.
+     */
+    deleteAllUsers = (req: Request, res: Response) =>
+    UserController.userDao.deleteAllUsers()
+    .then((status) => res.send(status));
 }
 
