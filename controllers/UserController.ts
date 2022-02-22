@@ -100,6 +100,6 @@ export default class UserController implements UserControllerI {
      */
     deleteAllUsers = (req: Request, res: Response) =>
     UserController.userDao.deleteAllUsers()
-    .then((status) => res.send(status));
+    .then(status => res.send(status));
 }
 
