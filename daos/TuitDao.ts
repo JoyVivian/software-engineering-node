@@ -1,5 +1,5 @@
 import Tuit from "../models/tuits/Tuit";
-import TuitModel from "../mongoose/TuitModel";
+import TuitModel from "../mongoose/tuits/TuitModel";
 import TuitDaoI from "../interfaces/TuitDao";
 import UserModel from "../mongoose/users/UserModel";
 
