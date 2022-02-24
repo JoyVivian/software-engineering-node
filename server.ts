@@ -1,9 +1,9 @@
 import express, {Request, Response} from 'express';
 import UserController from "./controllers/UserController";
 import TuitController from "./controllers/TuitController";
-import UserDao from './daos/UserDao';
 import TuitDao from './daos/TuitDao';
 import mongoose from 'mongoose';
+import LikeController from './controllers/LikeController';
 
 
 //mongoose.connect("mongodb://localhost:27017/tuiter");
@@ -26,6 +26,8 @@ const userController = UserController.getInstance(app);
 const tuitDao = new TuitDao();
 
 const tuitController = TuitController.getInstance(app);
+
+const likesController = LikeController.getInstance(app);
 
 const PORT = 4000;
 app.listen(process.env.PORT || PORT);
