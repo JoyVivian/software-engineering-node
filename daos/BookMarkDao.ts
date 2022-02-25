@@ -1,5 +1,5 @@
 import BookMarkDaoI from "../interfaces/bookmarks/BookMarkDao"
-import BookMark from "../models/bookmarks/Bookmark"
+import BookMark from "../models/bookmarks/BookMark"
 import BookMarkModel from "../mongoose/bookmarks/BookMarkModel";
 
 export default class BookMarkDao implements BookMarkDaoI {
