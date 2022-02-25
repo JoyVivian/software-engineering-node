@@ -1,5 +1,6 @@
-import mongoose from "mongoose";
+import mongoose, { Schema } from "mongoose";
 import User from "../../models/users/User";
+
 
 const UserSchema = new mongoose.Schema<User>({
    username: {type: String, required: true},
@@ -17,7 +18,9 @@ const UserSchema = new mongoose.Schema<User>({
    location: {
      latitude: {type: Number, default: 0.0},
      longitude: {type: Number, default: 0.0},
-   }
+   },
+   followers: [{type: Schema.Types.ObjectId, ref: 'UserModel'}]
 }, {collection: 'users'});
+
 export default UserSchema;
 

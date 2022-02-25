@@ -1,9 +1,6 @@
 import Like from "../models/likes/Like";
 
 /**
- * @file Declare API for Likes related data access object methods.
- */
-/**
  * @file Declares API for Likes related data access object methods
  */
  export default interface LikeDao {

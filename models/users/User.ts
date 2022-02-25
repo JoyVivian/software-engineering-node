@@ -1,7 +1,7 @@
 import AccountType from "./AccountType";
 import MaritalStatus from "./MaritalStatus";
 import Location from "./Location";
-import mongoose from "mongoose";
+import mongoose, {Schema} from "mongoose";
 
 
 export default class User {
@@ -18,6 +18,7 @@ export default class User {
    private dateOfBirth: Date | null = null;
    private joined: Date = new Date();
    private location: Location | null = null;
+   private followers: Schema.Types.ObjectId [] | null = null;
 }
 
 
