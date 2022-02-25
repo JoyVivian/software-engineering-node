@@ -2,7 +2,7 @@ import { Request, Response, Express } from "express";
 import { ParamsDictionary } from "express-serve-static-core";
 import { ParsedQs } from "qs";
 import TuitDao from '../daos/TuitDao';
-import TuitControllerI from "../interfaces/TuitController";
+import TuitControllerI from "../interfaces/tuits/TuitController";
 import Tuit from "../models/tuits/Tuit";
 
 export default class TuitController implements TuitControllerI {

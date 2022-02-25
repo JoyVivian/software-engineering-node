@@ -1,4 +1,4 @@
-import FollowDaoI from "../interfaces/FollowDao"
+import FollowDaoI from "../interfaces/follows/FollowDao"
 import User from "../models/users/User"
 import UserModel from "../mongoose/users/UserModel"
 

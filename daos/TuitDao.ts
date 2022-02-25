@@ -1,6 +1,6 @@
 import Tuit from "../models/tuits/Tuit";
 import TuitModel from "../mongoose/tuits/TuitModel";
-import TuitDaoI from "../interfaces/TuitDao";
+import TuitDaoI from "../interfaces/tuits/TuitDao";
 import UserModel from "../mongoose/users/UserModel";
 
 export default class TuitDao implements TuitDaoI {

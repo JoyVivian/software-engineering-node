@@ -1,4 +1,4 @@
-import User from "../models/users/User"
+import User from "../../models/users/User"
 
 /**
  * @file Declare API for Follow related data access methods.

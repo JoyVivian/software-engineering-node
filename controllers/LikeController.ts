@@ -3,7 +3,7 @@
  */
 import { Express, Request, Response } from "express";
 import LikeDao from "../daos/LikeDao"
-import LikeControllerI from "../interfaces/LikeController"
+import LikeControllerI from "../interfaces/likes/LikeController"
 
 /**
  * @class LikeController Implements RESTful Web Service API for likes resource.
