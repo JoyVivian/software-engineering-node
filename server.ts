@@ -6,6 +6,8 @@ import mongoose from 'mongoose';
 import LikeController from './controllers/LikeController';
 import FollowController from './controllers/FollowController'
 import BookMarkController from './controllers/BookMarkController'
+import MessageController from './controllers/MessageController'
+
 
 //mongoose.connect("mongodb://localhost:27017/tuiter");
 mongoose.connect('mongodb+srv://JoyVivian:997630Zw*@cluster0.pha8g.mongodb.net/myFirstDatabase?retryWrites=true&w=majority')
@@ -34,5 +36,6 @@ const followController = FollowController.getInstance(app);
 
 const bookMarkController = BookMarkController.getInstance(app);
 
+const messageController = MessageController.getInstance(app);
 const PORT = 4000;
 app.listen(process.env.PORT || PORT);
