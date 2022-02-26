@@ -1,3 +1,6 @@
+/**
+ * @file Declares API for messages related controller methods
+ */
 import {Request, Response} from "express";
 
 

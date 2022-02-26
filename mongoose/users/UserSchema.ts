@@ -1,3 +1,6 @@
+/**
+ * @file Implements mongoose schema.
+ */
 import mongoose, { Schema } from "mongoose";
 import User from "../../models/users/User";
 

@@ -1,3 +1,6 @@
+/**
+ * @file Declares API for Likes related controller methods
+ */
 import {Request, Response} from "express";
 
 export default interface BookMarkController {
