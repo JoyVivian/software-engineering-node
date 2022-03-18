@@ -15,6 +15,7 @@ import UserControllerI from "../interfaces/users/UserController";
  *      <li>GET /api/users/:uid to retrieve an individual user </li>
  *      <li>PUT /api/users to modify an individual user </li>
  *      <li>DELETE /api/users/:uid to delete an individual user </li>
+ *      <li>GET /api/users/username/:username/delete to delete users with a specific username.</li>
  * </ul>
  * @property {UserDao} userDao Singleton DAO implementing user CRUD operating. 
  * @property {UserController} userController Singleton controller implementing 
@@ -35,6 +36,7 @@ export default class UserController implements UserControllerI {
             app.delete("/api/users/:userid", UserController.userController.deleteUser);
             app.put("/api/users/:userid", UserController.userController.updateUser);
             app.delete("/api/users", UserController.userController.deleteAllUsers);
+            app.get("/api/users/username/:username/delete", UserController.userController.deleteUsersByUsername);
         }
         return UserController.userController;
    } 
@@ -100,6 +102,16 @@ export default class UserController implements UserControllerI {
      */
     deleteAllUsers = (req: Request, res: Response) =>
     UserController.userDao.deleteAllUsers()
+    .then(status => res.send(status));
+
+    /**
+     * Removed specific users with a particular username.
+     * @param req Request instance.
+     * @param res Response instance.
+     * @returns Promise to be notified when users are removed from database.
+     */
+    deleteUsersByUsername = (req: Request, res: Response) => 
+    UserController.userDao.deleteUsersByUsername(req.params.username)
     .then(status => res.send(status));
 }
 

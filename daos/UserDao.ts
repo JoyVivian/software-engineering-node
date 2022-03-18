@@ -80,5 +80,13 @@ export default class UserDao implements UserDaoI {
     async deleteAllUsers(): Promise<any> {
         UserModel.deleteMany({});
     }
+
+    /**
+     * Removes user with a particular username.
+     * @param uname The particular username that the wanted user has.
+     */
+    async deleteUsersByUsername(uname: string): Promise<any> {
+        return await UserModel.deleteMany({username: uname});
+    }
 }
 
