@@ -15,6 +15,7 @@ mongoose.connect('mongodb+srv://JoyVivian:997630Zw*@cluster0.pha8g.mongodb.net/m
 
 const app = express();
 app.use(express.json());
+app.use(cors());
 
 app.get('/', (req: Request, res: Response) => 
     res.send('Welcome!')
