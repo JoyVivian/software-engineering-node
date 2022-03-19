@@ -103,4 +103,13 @@ export default class TuitController implements TuitControllerI {
      */
     updateTuit = (req: Request, res: Response) => TuitController.tuitDao.updateTuit(req.params.tid, req.body)
         .then(status => res.json(status));
+
+    /**
+     *  Delete all tuits from the database.
+     * @param req Represents request from client.
+     * @param res Represents response to client.
+     * @returns Delete status code.
+     */
+    deleteAllTuits = (req: Request, res: Response) => TuitController.tuitDao.deleteAllTuits()
+    .then(status => res.json(status));
 };
