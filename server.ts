@@ -11,7 +11,8 @@ var cors = require('cors');
 
 
 //mongoose.connect("mongodb://localhost:27017/tuiter");
-mongoose.connect('mongodb+srv://JoyVivian:997630Zw*@cluster0.pha8g.mongodb.net/myFirstDatabase?retryWrites=true&w=majority')
+//mongoose.connect('mongodb+srv://JoyVivian:997630Zw*@cluster0.pha8g.mongodb.net/myFirstDatabase?retryWrites=true&w=majority')
+mongoose.connect('mongodb+srv://JoyVivian:997630Zw*@cluster0.pha8g.mongodb.net/A3?retryWrites=true&w=majority')
 
 const app = express();
 app.use(express.json());
