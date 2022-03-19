@@ -5,6 +5,7 @@
 import {Request, Response, Express} from "express";
 import UserDao from "../daos/UserDao";
 import UserControllerI from "../interfaces/users/UserController";
+import User from "../models/users/User";
 
 /**
  * @class UserController Implements RESTful Web Service API for users resource.
@@ -51,7 +52,7 @@ export default class UserController implements UserControllerI {
     */
    findAllUsers = (req: Request, res: Response) =>
        UserController.userDao.findAllUsers()
-           .then(users => res.json(users));
+           .then((users: User[]) => res.json(users));
 
    /**
     * Uses UserModel to retrieve single user document from user collection.
