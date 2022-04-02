@@ -22,12 +22,13 @@ import GroupController from "./controllers/GroupController";
 const cors = require("cors");
 const session = require("express-session");
 
+require("dotenv").config();
 // build the connection string
 const PROTOCOL = "mongodb+srv";
 const DB_USERNAME = process.env.DB_USERNAME;
 const DB_PASSWORD = process.env.DB_PASSWORD;
-const HOST = "cluster0.m8jeh.mongodb.net";
-const DB_NAME = "myFirstDatabase";
+const HOST = "cluster0.pha8g.mongodb.net";
+const DB_NAME = "A4";
 const DB_QUERY = "retryWrites=true&w=majority";
 const connectionString = `${PROTOCOL}://${DB_USERNAME}:${DB_PASSWORD}@${HOST}/${DB_NAME}?${DB_QUERY}`;// connect to the database
 mongoose.connect(connectionString);
@@ -42,10 +43,10 @@ let sess = {
     secret: process.env.EXPRESS_SESSION_SECRET,
     saveUninitialized: true,
     resave: true,
-    cookie: {
-        sameSite: process.env.NODE_ENV === "production" ? 'none' : 'lax',
-        secure: process.env.NODE_ENV === "production",
-    }
+    // cookie: {
+    //     sameSite: process.env.NODE_ENV === "production" ? 'none' : 'lax',
+    //     secure: process.env.NODE_ENV === "production",
+    // }
 }
 
 if (process.env.NODE_ENV === 'production') {
