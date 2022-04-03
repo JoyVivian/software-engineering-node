@@ -1,5 +1,5 @@
 /**
- * @file Controller RESTful Web service API for likes resource
+ * @file Controller RESTful Web service API for dislikes resource
  */
 import {Express, Request, Response} from "express";
 import DislikeDao from "../daos/DislikeDao";
@@ -7,19 +7,19 @@ import DislikeControllerI from "../interfaces/DislikeController";
 import TuitDao from "../daos/TuitDao";
 
 /**
- * @class TuitController Implements RESTful Web service API for likes resource.
+ * @class TuitController Implements RESTful Web service API for dislikes resource.
  * Defines the following HTTP endpoints:
  * <ul>
- *     <li>GET /api/users/:uid/likes to retrieve all the tuits liked by a user
+ *     <li>GET /api/users/:uid/dislikes to retrieve all the tuits liked by a user
  *     </li>
- *     <li>GET /api/tuits/:tid/likes to retrieve all users that liked a tuit
+ *     <li>GET /api/tuits/:tid/dislikes to retrieve all users that liked a tuit
  *     </li>
- *     <li>POST /api/users/:uid/likes/:tid to record that a user likes a tuit
+ *     <li>POST /api/users/:uid/dislikes/:tid to record that a user likes a tuit
  *     </li>
- *     <li>DELETE /api/users/:uid/unlikes/:tid to record that a user
+ *     <li>DELETE /api/users/:uid/undislikes/:tid to record that a user
  *     no londer likes a tuit</li>
  * </ul>
- * @property {LikeDao} likeDao Singleton DAO implementing likes CRUD operations
+ * @property {LikeDao} likeDao Singleton DAO implementing dislikes CRUD operations
  * @property {LikeController} LikeController Singleton controller implementing
  * RESTful Web service API
  */
