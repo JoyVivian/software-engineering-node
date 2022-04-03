@@ -41,6 +41,7 @@ app.use(cors({
     origin: process.env.CORS_ORIGIN
 }));
 
+//cookie must be on when remotely deploy.
 let sess = {
     secret: process.env.EXPRESS_SESSION_SECRET,
     saveUninitialized: true,
